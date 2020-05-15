@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CheckTKSL : MonoBehaviour
+
+
+{
+    private movwei hero;
+    // Start is called before the first frame update
+    void Start()
+    {
+        hero = GetComponentInParent<movwei>();
+    }
+
+    void OnCollisionEnter2D(Collision2D cola)
+    {
+        if (cola.gameObject.tag == "piso") {
+            hero.TKSL = true;
+        }
+    }
+     void OnCollisionExit2D(Collision2D cola)
+    {
+        if (cola.gameObject.tag == "piso")
+        {
+            hero.TKSL = false;
+        }
+    }
+}
