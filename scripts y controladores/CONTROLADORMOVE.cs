@@ -11,11 +11,14 @@ public class CONTROLADORMOVE : MonoBehaviour
     public float speed = 2f;
     public bool TKSL;
     public float FDsalto = 6.5f;
-   
+    public GameObject construir;
+    public GameObject destruir;
     private bool salto;
     private Rigidbody2D rb2d;
     private Animator anima;
     private bool movement = true;
+    public GameObject construir2;
+    public GameObject construir3;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,34 @@ public class CONTROLADORMOVE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                Instantiate(construir);
+
+            }
+            print("ya quedo");
+            Destroy(destruir);
+
+
+
+            for (int i = 0; i < 1; i++)
+            {
+                Instantiate(construir2);
+
+            }
+
+            for (int i = 0; i < 1; i++)
+            {
+                Instantiate(construir3);
+
+            }
+
+        }
+
 
         anima.SetFloat("speed", Mathf.Abs(rb2d.velocity.x));
         anima.SetBool("TKSL", TKSL);
